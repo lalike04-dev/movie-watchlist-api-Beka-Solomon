@@ -1,0 +1,26 @@
+{
+  "name": "movie-watchlist-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalike04-dev/movie-watchlist-api-Beka-Solomon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/lalike04-dev/movie-watchlist-api-Beka-Solomon/issues"
+  },
+  "homepage": "https://github.com/lalike04-dev/movie-watchlist-api-Beka-Solomon#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
