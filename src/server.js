@@ -14,3 +14,5 @@ server.use((err, req, res, next) => {
   }
   next(err);
 });
+
+server.use("/api/movies", router)
