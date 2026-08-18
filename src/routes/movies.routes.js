@@ -33,3 +33,18 @@ router.get("/:id", (req, res) => {
   res.json(found)
   
 });
+
+router.post("/",requrieapikey,validatemovie,(req,res)=>{
+    if(req.body!=null || req.body!=undefined){const {id,name,genre, watched,rating}=req.body
+    if(movies.find(movie=>movie.id==id))
+        return res.json({
+    message:"ID already exists, please try again with other id"
+    })
+    movies.push({id:id,
+        name:name,
+        genre:genre,
+        watched:watched,
+        rating:rating})
+    res.status(201).json(movies)}
+})
+
