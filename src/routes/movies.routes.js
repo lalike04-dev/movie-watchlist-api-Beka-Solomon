@@ -23,3 +23,13 @@ router.get("/", (req, res) => {
   
 });
 
+router.get("/:id", (req, res) => {
+  const found = movies.find((movie) => movie.id == req.params.id);
+  if (found === undefined || found==null) {
+    return res.json({
+      message: "enter a valid id please!",
+    });
+  } 
+  res.json(found)
+  
+});
