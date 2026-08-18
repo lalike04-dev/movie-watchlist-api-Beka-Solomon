@@ -20,3 +20,9 @@ server.use(logger)
 server.use("/api/movies", router)
 
 server.use(notfound)
+
+
+server.listen(3000,()=>{
+    console.log("Server is listenign at 3000!")
+})
+
