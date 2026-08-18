@@ -7,3 +7,10 @@ import { logger } from "./middleware/request-logger.js";
 const server=express();
 
 server.use(express.json());
+
+server.use((err, req, res, next) => {
+  if (err.name === 'SyntaxError') {
+    return res.status(400).json({ message: "Invalid JSON format, please check your data" });
+  }
+  next(err);
+});
