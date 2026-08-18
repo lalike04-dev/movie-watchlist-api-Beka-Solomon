@@ -67,3 +67,16 @@ movies[index]={
 res.status(200).json(movies)
 
 })
+
+
+router.delete("/:id",requrieapikey,(req,res)=>{
+  const index=movies.findIndex(movie=>movie.id==req.params.id)
+  if(index==-1){
+    return res.status(404).json({
+      message:"Movie doesnt exist!"
+    })
+  }
+  movies.splice(index,1)
+  res.status(204).json(movies)
+})
+
