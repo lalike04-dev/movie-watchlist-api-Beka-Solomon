@@ -48,3 +48,22 @@ router.post("/",requrieapikey,validatemovie,(req,res)=>{
     res.status(201).json(movies)}
 })
 
+
+router.patch("/:id",requrieapikey,validatemovie,(req,res)=>{
+const {name,genre,watched,rating}=req.body
+const index=movies.findIndex(mo=>mo.id==req.params.id)
+if(index==-1){
+return res.status(400).json({
+  message:"Movie doesnt exist!"
+})
+}
+movies[index]={
+  id:req.params.id,
+  name:name,
+  genre:genre,
+  watched:watched,
+  rating:rating
+}
+res.status(200).json(movies)
+
+})
