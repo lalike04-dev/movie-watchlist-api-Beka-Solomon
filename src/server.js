@@ -15,4 +15,8 @@ server.use((err, req, res, next) => {
   next(err);
 });
 
+server.use(logger)
+
 server.use("/api/movies", router)
+
+server.use(notfound)
